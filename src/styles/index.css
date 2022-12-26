@@ -10,3 +10,23 @@
   margin: auto;
   min-height: 100vh;
 }
+.accordion {
+}
+.content {
+}
+.item {
+  background-color: #f0ebe1;
+  margin: 5px 0;
+  padding: 10px 20px;
+}
+.content {
+  color: #8b7f75;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0, 1, 0, 1);
+}
+.content.show {
+  height: auto;
+  max-height: 9999px;
+  transition: all 0.5s cubic-bezier(1, 0, 1, 0);
+}

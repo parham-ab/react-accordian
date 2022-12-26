@@ -13,15 +13,19 @@ const App = () => {
 
   return (
     <div className="container">
-      {data.map((item, index) => (
-        <div key={item.question}>
-          <h3>{item.question}</h3>
-          <button onClick={() => toggler(index)}>
-            {selected === index ? "-" : "+"}
-          </button>
-          <p>{item.answer}</p>
-        </div>
-      ))}
+      <div className="accordion">
+        {data.map((item, index) => (
+          <div key={item.question} className="item">
+            <h3>{item.question}</h3>
+            <button onClick={() => toggler(index)}>
+              {selected === index ? "-" : "+"}
+            </button>
+            <div className={selected === index ? "content show" : "content"}>
+              {item.answer}
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
