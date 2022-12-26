@@ -30,3 +30,10 @@
   max-height: 9999px;
   transition: all 0.5s cubic-bezier(1, 0, 1, 0);
 }
+.rotate-down {
+  transform: rotate(-180deg);
+  transition: all 0.3s;
+}
+.rotate-up {
+  transition: all 0.3s;
+}

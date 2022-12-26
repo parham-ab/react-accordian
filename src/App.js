@@ -1,5 +1,8 @@
 import { useState } from "react";
+// fake-data
 import { data } from "./data";
+// icons
+import { BsChevronDown } from "react-icons/bs";
 
 const App = () => {
   const [selected, setSelected] = useState(null);
@@ -17,9 +20,17 @@ const App = () => {
         {data.map((item, index) => (
           <div key={item.question} className="item">
             <h3>{item.question}</h3>
-            <button onClick={() => toggler(index)}>
-              {selected === index ? "-" : "+"}
-            </button>
+            <div onClick={() => toggler(index)}>
+              {selected === index ? (
+                <span>
+                  <BsChevronDown className="rotate-down" />
+                </span>
+              ) : (
+                <span>
+                  <BsChevronDown className="rotate-up" />
+                </span>
+              )}
+            </div>
             <div className={selected === index ? "content show" : "content"}>
               {item.answer}
             </div>
