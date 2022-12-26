@@ -19,17 +19,15 @@ const App = () => {
       <div className="accordion">
         {data.map((item, index) => (
           <div key={item.question} className="item">
-            <h3>{item.question}</h3>
-            <div onClick={() => toggler(index)}>
-              {selected === index ? (
-                <span>
+            <div className="accordion-header" onClick={() => toggler(index)}>
+              <h3>{item.question}</h3>
+              <div>
+                {selected === index ? (
                   <BsChevronDown className="rotate-down" />
-                </span>
-              ) : (
-                <span>
+                ) : (
                   <BsChevronDown className="rotate-up" />
-                </span>
-              )}
+                )}
+              </div>
             </div>
             <div className={selected === index ? "content show" : "content"}>
               {item.answer}
